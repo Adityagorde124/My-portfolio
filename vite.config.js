@@ -27,7 +27,7 @@ function syncUserPhoto() {
 
       const base64 = `data:image/jpeg;base64,${buf.toString('base64')}`;
       fs.writeFileSync(destModule, `export const ADITYA_PHOTO = ${JSON.stringify(base64)};\n`, 'utf-8');
-      console.log('✅ Synchronized Aditya Gorde profile photo into public, src/assets, and profilePhoto.js!');
+      console.log('✅ Synchronized Aditya Gorde profile photo!');
     }
   } catch (e) {
     console.error('Error syncing photo:', e);
@@ -39,6 +39,7 @@ syncUserPhoto();
 
 // https://vite.config.js
 export default defineConfig({
+  base: '/My-portfolio/',
   plugins: [
     react(),
     {
